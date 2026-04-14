@@ -9,7 +9,8 @@
     "guardrails",
     "launch"
   ],
-  "accent": "#ff6b35",
+  "accent": "#2c7fc8",
+  "secondary_accent": "#2ca937",
   "dashboard_metrics": [
     {
       "label": "North Star",
@@ -44,5 +45,52 @@
     "The primary value proposition is: Monitor experiment guardrails, rollout quality, and anomaly thresholds during launches.",
     "Recommended operating model: ship a small API, add observability, validate outputs with stakeholder review, and monitor the top business KPI every week.",
     "Typical stakeholders include analytics, operations, product, and leadership teams working on ab-tests, guardrails, launch."
+  ],
+  "app_archetype": "studio",
+  "ui_profile": {
+    "layout": "stack",
+    "surface": "ink",
+    "font_stack": "\"Avenir Next\", \"Segoe UI\", sans-serif",
+    "radius": 28,
+    "shadow": 54,
+    "eyebrow_style": "solid",
+    "module_columns": 3,
+    "hero_align": "split",
+    "headline_mode": "tall"
+  },
+  "app_modules": [
+    {
+      "label": "Studio 01",
+      "title": "Opportunity Scorecard",
+      "description": "Score the current opportunity shape before deciding what to prioritize next.",
+      "endpoint": "/score",
+      "input_mode": "json",
+      "cta": "Score Opportunity",
+      "prefill": "{\n  \"features\": {\n    \"current_conversion\": 0.17,\n    \"baseline_conversion\": 0.12,\n    \"volume\": 2200,\n    \"segment\": \"new_users\"\n  }\n}",
+      "hint": "Opportunity score and top factors will appear here.",
+      "span": "normal"
+    },
+    {
+      "label": "Studio 02",
+      "title": "Metric Storyline",
+      "description": "Translate KPI movement into a concise summary for product, growth, or finance stakeholders.",
+      "endpoint": "/analyze",
+      "input_mode": "json",
+      "cta": "Summarize Metrics",
+      "prefill": "{\n  \"metrics\": {\n    \"acquisition\": 48.6,\n    \"activation\": 46.0,\n    \"retention\": 57.2,\n    \"revenue\": 95.2\n  },\n  \"baseline\": {\n    \"acquisition\": 44.71,\n    \"activation\": 42.32,\n    \"retention\": 52.62,\n    \"revenue\": 87.58\n  }\n}",
+      "hint": "Metric storyline summary will appear here.",
+      "span": "wide"
+    },
+    {
+      "label": "Studio 03",
+      "title": "Decision Memo",
+      "description": "Generate the next action memo grounded in the project-specific context.",
+      "endpoint": "/recommend",
+      "input_mode": "json",
+      "cta": "Draft Memo",
+      "prefill": "{\n  \"prompt\": \"Recommend the next best action for A/B Test Guardrail Monitor.\",\n  \"features\": {\n    \"current_conversion\": 0.17,\n    \"baseline_conversion\": 0.12,\n    \"volume\": 2200,\n    \"segment\": \"new_users\"\n  },\n  \"metrics\": {\n    \"acquisition\": 48.6,\n    \"activation\": 46.0,\n    \"retention\": 57.2,\n    \"revenue\": 95.2\n  }\n}",
+      "hint": "Decision memo will appear here.",
+      "span": "normal"
+    }
   ]
 }
